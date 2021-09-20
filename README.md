@@ -1,4 +1,4 @@
-# Zustand Tutorial
+# Zustand
 간단한 Flux 원칙을 사용하는 작고 빠르고 확장 가능한 상태 관리 솔루션입니다. Hook 기반으로 하는 편리한 API가 있습니다.
 
 ## 먼저 스토어 생성
