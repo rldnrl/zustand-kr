@@ -51,7 +51,7 @@ export default Counter
 ## 왜 context보다 zustand인가요?
 - boilerplate가 적음.
 - 변경 시에만 컴포넌트 렌더링
-- Centralized, action-based state management
+- 중앙 집중식, action 기반의 상태 관리
 
 # Recipes
 ## Fetching everything
