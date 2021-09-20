@@ -5,41 +5,27 @@
 store는 hook입니다! 어떤 것이든 넣을 수 있습니다(원시 타입, 객체, 함수). `set` 함수는 상태를 병합(Merge)합니다.
 
 ```tsx
-import create from "zustand";
+import create from 'zustand'
 
-interface CountState {
-  count: number;
-  increase: () => void;
-  decrease: () => void;
-  reset: () => void;
-}
-
-export const useCount = create<CountState>((set) => ({
-  count: 0,
-  increase: () => set((state) => ({ count: state.count + 1 })),
-  decrease: () => set((state) => ({ count: state.count - 1 })),
-  reset: () => set(() => ({ count: 0 })),
-}));
+const useStore = create(set => ({
+  bears: 0,
+  increasePopulation: () => set(state => ({ bears: state.bears + 1 })),
+  removeAllBears: () => set({ bears: 0 })
+}))
 ```
 
 ## 그런 다음 컴포넌트에 바인딩합니다.
 
 ```tsx
-const Counter = () => {
-  const count = useCount((state) => state.count)
-  const increase = useCount((state) => state.increase)
-  const decrease = useCount((state) => state.decrease)
-
-  return (
-    <div>
-      <p>Counter: {count}</p>
-      <button onClick={increase}>증가</button>
-      <button onClick={decrease}>감소</button>
-    </div>
-  )
+function BearCounter() {
+  const bears = useStore(state => state.bears)
+  return <h1>{bears} around here ...</h1>
 }
 
-export default Counter
+function Controls() {
+  const increasePopulation = useStore(state => state.increasePopulation)
+  return <button onClick={increasePopulation}>one up</button>
+}
 ```
 
 ## 왜 redux보다 zustand인가요?
