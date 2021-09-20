@@ -207,6 +207,20 @@ function Component() {
 ## reducer와 중첩 상태(nested state) 변경에 지쳤습니까? immer를 사용하세요!
 중첩 구조를 줄이는 것은 귀찮습니다. [immer](https://immerjs.github.io/immer/) 해보셨나요?
 
+```tsx
+import produce from 'immer'
+
+const useStore = create(set => ({
+  lush: { forest: { contains: { a: "bear" } } },
+  clearForest: () => set(produce(state => {
+    state.lush.forest.contains = null
+  }))
+}))
+
+const clearForest = useStore(state => state.clearForest)
+clearForest();
+```
+
 ## Middleware
 기능적으로 원하는 방식으로 store을 구성할 수 있습니다.
 
