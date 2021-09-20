@@ -135,7 +135,7 @@ const useStore = create((set, get) => ({
 })
 ```
 
-`set`은 fn-updates set(state => result)를 허용하지만 `get`을 통해 외부 상태에 계속 액세스할 수 있습니다.
+`set`은 fn-updates `set(state => result)`를 허용하지만 `get`을 통해 외부 상태에 계속 액세스할 수 있습니다.
 
 ## 상태 읽기/쓰기 및 구성 요소 외부의 변경 사항에 대한 반응
 때로는 reactive 하지 않은 방식으로 state에 접근하거나 store에 대해 조치를 취해야 합니다. 이러한 경우 result hook에는 프로토타입에 첨부된 유틸리티 기능이 있습니다.
