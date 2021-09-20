@@ -69,7 +69,7 @@ const nuts = useStore(state => state.nuts)
 const honey = useStore(state => state.honey)
 ```
 
-redux의 `mapStateToProps와` 유사하게 내부에 여러 상태 선택이 있는 단일 객체를 생성하려는 경우 zustand에게 `shallow` equality function를 전달하여 객체가 얕게 비교하기를 원한다고 말할 수 있습니다.
+redux의 `mapStateToProps와` 유사하게 내부에 여러 상태 선택이 있는 단일 객체를 생성하려는 경우 zustand에게 `shallow` 동등 함수를 전달하여 객체가 얕게 비교하기를 원한다고 말할 수 있습니다.
 
 ```tsx
 import shallow from 'zustand/shallow'
